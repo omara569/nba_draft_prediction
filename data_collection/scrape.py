@@ -30,7 +30,7 @@ def driver_instance(driver_file_name=None, kill_existing_bool=False) -> webdrive
     if kill_existing_bool:
         kill_existing()
     firefox_options = Options()
-    firefox_options.add_argument('-headless')
+    #firefox_options.add_argument('-headless')
     if driver_file_name is not None: # We only perform this at the start
         if driver_file_name in os.listdir(os.getcwd()):
             os.remove(os.getcwd()+'/'+driver_file_name)
