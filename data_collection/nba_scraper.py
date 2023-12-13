@@ -18,7 +18,10 @@ def draft_hist_collection(url: str, driver: webdriver.firefox.webdriver.WebDrive
     local_path = os.path.dirname(os.path.realpath(__file__)) + '/'
     save_dir = local_path + 'scraped_draft_dir' # This is where we'll save each page of draft picks
     scrape.make_dir(save_dir)
+    print('Opening Browser')
     scrape.open_url(url=url, driver=driver)
+    sleep(10)
+    print('Navigating and Saving Pages')
     num_pages = int(driver.find_element(By.CLASS_NAME, 'Crom_cromSettings__ak6Hd').text.split('of ')[-1])
     for i in range(num_pages):
         table_element = driver.find_element(By.CLASS_NAME, 'Crom_table__p1iZz')
