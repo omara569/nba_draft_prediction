@@ -57,6 +57,7 @@ def ncaa_hist_collection(url: str, driver: webdriver.firefox.webdriver.WebDriver
         scrape.open_url(f'{base_url}{year}', driver)
         saved_html_name = driver.find_element(By.CLASS_NAME, 'headline.headline__h1.dib').text.split(' ')[-1]
         perpetual_loading(driver)
+        driver.execute_script("document.querySelectorAll('*').forEach(el => el.style.display = 'block');") #Shows hidden HTML nodes in Javascript
         with open(f'{save_dir}/{saved_html_name}.html', mode='w', encoding='utf-8') as f:
             f.write(driver.page_source)
     print('Completed college player stats collection')

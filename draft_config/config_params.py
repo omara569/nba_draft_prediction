@@ -10,6 +10,8 @@ class Params:
     scraped_draft_dir: str
     ncaa_url: str
     scraped_ncaa_dir: str
+    parsed_ncaa_dir: str 
+    parsed_draft_dir: str
 
 
 config_vals = {
@@ -19,6 +21,8 @@ config_vals = {
     'scraped_draft_dir':'data_collection/scraped_draft_dir',
     'ncaa_url':'https://www.espn.com/mens-college-basketball/stats/player/_/season/2024',
     'scraped_ncaa_dir':'data_collection/scraped_ncaa_dir',
+    'parsed_ncaa_dir': 'data_parsing/ncaa_dir_parsed',
+    'parsed_draft_dir': 'data_parsing/draft_dir_parsed',
 }
 
 
