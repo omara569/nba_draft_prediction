@@ -12,6 +12,8 @@ class Params:
     scraped_ncaa_dir: str
     parsed_ncaa_dir: str 
     parsed_draft_dir: str
+    extracted_ncaa_dir: str
+    extracted_draft_dir: str
 
 
 config_vals = {
@@ -23,6 +25,8 @@ config_vals = {
     'scraped_ncaa_dir':'data_collection/scraped_ncaa_dir',
     'parsed_ncaa_dir': 'data_parsing/ncaa_dir_parsed',
     'parsed_draft_dir': 'data_parsing/draft_dir_parsed',
+    'extracted_ncaa_dir': 'etl/extracted_ncaa',
+    'extracted_draft_dir': 'etl/extracted_draft',
 }
 
 
