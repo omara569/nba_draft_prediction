@@ -1,5 +1,17 @@
 # CHANGELOG
 
+# [0.2.0] : 2023-12-18
+
+- Completed ETL. Next is exploratory analysis
+
+# [0.1.2] : 2023-12-18
+
+- Completed Transformation Code. Load Next
+
+# [0.1.1] : 2023-12-16
+
+- Completed Extraction of Data. Transform and Load next
+
 # [0.1.0] : 2023-12-15
 
 - Completed Parser. Adjusted scraper to include javascript elements hiding HTML
