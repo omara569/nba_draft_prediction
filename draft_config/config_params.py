@@ -14,6 +14,12 @@ class Params:
     parsed_draft_dir: str
     extracted_ncaa_dir: str
     extracted_draft_dir: str
+    transformed_draft_dir: str
+    transformed_ncaa_dir: str
+    transformed_draft_name: str
+    extracted_draft_name: str
+    transformed_ncaa_name: str
+    extracted_ncaa_name: str
 
 
 config_vals = {
@@ -27,6 +33,12 @@ config_vals = {
     'parsed_draft_dir': 'data_parsing/draft_dir_parsed',
     'extracted_ncaa_dir': 'etl/extracted_ncaa',
     'extracted_draft_dir': 'etl/extracted_draft',
+    'transformed_draft_dir':'etl/transformed_draft',
+    'transformed_ncaa_dir':'etl/transformed_ncaa',
+    'transformed_draft_name':'transformed_draft.csv',
+    'extracted_draft_name':'draft_extracted.csv',
+    'transformed_ncaa_name':'transformed_ncaa.csv',
+    'extracted_ncaa_name':'ncaa_extracted.csv'
 }
 
 

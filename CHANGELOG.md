@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# [0.1.2] : 2023-12-18
+
+- Completed Transformation Code. Load Next
+
 # [0.1.1] : 2023-12-16
 
 - Completed Extraction of Data. Transform and Load next
