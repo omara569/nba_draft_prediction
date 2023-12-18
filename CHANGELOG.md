@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# [0.2.0] : 2023-12-18
+
+- Completed ETL. Next is exploratory analysis
+
 # [0.1.2] : 2023-12-18
 
 - Completed Transformation Code. Load Next
