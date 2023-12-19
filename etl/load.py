@@ -24,7 +24,7 @@ def create_draft(channel: sqlite3.Cursor) -> None:
 
 
 def create_ncaa(channel: sqlite3.Cursor) -> None:
-    channel.execute("CREATE TABLE IF NOT EXISTS ncaa_data_raw ('rank','name','university', 'position', 'games_played', 'minutes_per_game', 'points_per_game', 'average_field_goals_made', 'average_field_goals_attempted','field_goal_percentage', 'average_three_point_field_goals_made', 'average_three_point_field_goals_attempted', 'three_point_field_goal_percentage', 'average_free_throws_made', 'average_free_throws_attempted', 'free_throws_percentage', 'rebounds_per_game', 'assists_per_game', 'steals_per_game', 'blocks_per_game', 'turnovers_per_game', 'draft_year');")
+    channel.execute("CREATE TABLE IF NOT EXISTS ncaa_data_raw ('rank','name','university', 'position', 'games_played', 'minutes_per_game', 'points_per_game', 'average_field_goals_made', 'average_field_goals_attempted','field_goal_percentage', 'average_three_point_field_goals_made', 'average_three_point_field_goals_attempted', 'three_point_field_goal_percentage', 'average_free_throws_made', 'average_free_throws_attempted', 'free_throws_percentage', 'rebounds_per_game', 'assists_per_game', 'steals_per_game', 'blocks_per_game', 'turnovers_per_game', 'ncaa_year');")
 
 
 def get_draft_write_rows(draft_path: str) -> List[Tuple]:
@@ -66,7 +66,7 @@ def get_ncaa_write_rows(ncaa_path: str) -> List[Tuple]:
                 i['Steals Per Game'],
                 i['Blocks Per Game'],
                 i['Turnovers Per Game'],
-                i['draft_year']) for i in dr]
+                i['ncaa_year']) for i in dr]
     return to_db
 
 
@@ -84,9 +84,9 @@ def insert_ncaa_data(connection: sqlite3.Connection, channel: sqlite3.Cursor, da
     # We only write in the instances where the given row doesn't already exist in the table!
     for row in data:
         channel.execute('''SELECT * FROM ncaa_data_raw 
-                        WHERE rank=? AND name=? AND university=? AND position=? AND games_played=? AND minutes_per_game=? AND points_per_game=? AND average_field_goals_made=? AND average_field_goals_attempted=? AND field_goal_percentage=? AND average_three_point_field_goals_made=? AND average_three_point_field_goals_attempted=? AND three_point_field_goal_percentage=? AND average_free_throws_made=? AND average_free_throws_attempted=? AND free_throws_percentage=? AND rebounds_per_game=? AND assists_per_game=? AND steals_per_game=? AND blocks_per_game=? AND turnovers_per_game=? AND draft_year=?''', row)
+                        WHERE rank=? AND name=? AND university=? AND position=? AND games_played=? AND minutes_per_game=? AND points_per_game=? AND average_field_goals_made=? AND average_field_goals_attempted=? AND field_goal_percentage=? AND average_three_point_field_goals_made=? AND average_three_point_field_goals_attempted=? AND three_point_field_goal_percentage=? AND average_free_throws_made=? AND average_free_throws_attempted=? AND free_throws_percentage=? AND rebounds_per_game=? AND assists_per_game=? AND steals_per_game=? AND blocks_per_game=? AND turnovers_per_game=? AND ncaa_year=?''', row)
         if channel.fetchone() is None:
-            channel.execute("INSERT INTO ncaa_data_raw ('rank', 'name', 'university', 'position', 'games_played', 'minutes_per_game', 'points_per_game', 'average_field_goals_made', 'average_field_goals_attempted', 'field_goal_percentage', 'average_three_point_field_goals_made', 'average_three_point_field_goals_attempted', 'three_point_field_goal_percentage', 'average_free_throws_made', 'average_free_throws_attempted', 'free_throws_percentage', 'rebounds_per_game', 'assists_per_game', 'steals_per_game', 'blocks_per_game','turnovers_per_game', 'draft_year') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", row)
+            channel.execute("INSERT INTO ncaa_data_raw ('rank', 'name', 'university', 'position', 'games_played', 'minutes_per_game', 'points_per_game', 'average_field_goals_made', 'average_field_goals_attempted', 'field_goal_percentage', 'average_three_point_field_goals_made', 'average_three_point_field_goals_attempted', 'three_point_field_goal_percentage', 'average_free_throws_made', 'average_free_throws_attempted', 'free_throws_percentage', 'rebounds_per_game', 'assists_per_game', 'steals_per_game', 'blocks_per_game','turnovers_per_game', 'ncaa_year') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", row)
     connection.commit()
 
 

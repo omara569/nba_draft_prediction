@@ -20,6 +20,7 @@ class Params:
     extracted_draft_name: str
     transformed_ncaa_name: str
     extracted_ncaa_name: str
+    db_path: str
 
 
 config_vals = {
@@ -38,7 +39,8 @@ config_vals = {
     'transformed_draft_name':'transformed_draft.csv',
     'extracted_draft_name':'draft_extracted.csv',
     'transformed_ncaa_name':'transformed_ncaa.csv',
-    'extracted_ncaa_name':'ncaa_extracted.csv'
+    'extracted_ncaa_name':'ncaa_extracted.csv',
+    'db_path':'etl/nba.db'
 }
 
 
