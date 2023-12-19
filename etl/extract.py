@@ -11,7 +11,7 @@ def extract_ncaa(ncaa_path: str, save_path: str):
     data_list = []
     for file in os.listdir(ncaa_path):
         data = pd.read_csv(f'{ncaa_path}/{file}', sep='|', encoding='utf-8')
-        data['draft_year'] = file.split('.')[0]
+        data['ncaa_year'] = file.split('.')[0]
         data_list.append(data)
         
     aggregated = pd.concat(data_list, ignore_index=True)

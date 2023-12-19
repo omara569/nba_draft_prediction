@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# [0.2.1] : 2023-12-19
+
+- Performed Preliminary Data Exploration. Moving on to data cleaning
+
 # [0.2.0] : 2023-12-18
 
 - Completed ETL. Next is exploratory analysis
