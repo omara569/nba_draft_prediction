@@ -61,8 +61,8 @@ def parse_ncaa_stats(scrape_path: str, local_path: str):
             table_full.append(pd.DataFrame(dict(zip(headers, attrs)), index=[0]))
         
         table_full = pd.concat(table_full, ignore_index=True)
-        uni_df = table_full['Name'].str.extract(r'(?P<University>[A-Z&-]+)$')
-        name_df = table_full['Name'].str.extract(r'(?P<Name>[A-Za-z\s().-]+?)(?:[A-Z&-]+$|$)')
+        uni_df = table_full['Name'].str.extract(r"(?P<University>[A-Z&-]+)$")
+        name_df = table_full['Name'].str.extract(r"(?P<Name>[,'A-Za-z\s().-]+?)(?:[A-Z&-]+$|$)")
         table_full['Name'] = name_df['Name']
         table_full['University'] = uni_df['University']
         table_part2 = pd.read_html(current_html_path)[1] 

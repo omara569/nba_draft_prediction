@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# [0.4.0] : 2023-12-20
+
+- More bug fixes to data parsing. completed feature engineering and added to data exploration process
+
 # [0.3.0] : 2023-12-19
 
 - Completed Data Cleaning. Bug fixes in data parsing to allow for better separation between names and universities
